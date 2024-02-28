@@ -2,122 +2,35 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+CollabCoder is a lower-barrier, rigorous workflow for inductive collaborative qualitative analysis. The workflow consists of three key stages: 
+- **Independent Open Coding**, facilitated by on-demand code suggestions from LLMs, producing initial codes; 
+- **Iterative Discussion**, focusing on conflict mediation within the coding team, producing a list of agreed-upon code decisions; 
+- **Codebook Development**, where code groups may be formed through LLM-generated suggestions, based on the list of decided codes in the previous phase.
 
-[Link to another page](./another-page.html).
+<br>
+<br>
+<h2>Precoding</h2> Establish consistent data units and enlist coding team during project creation. The primary coder, Alice, can: 1) name the project, 2) incorporate data, ensuring it aligns with mutually agreed data units, 2a) illustrate how CollabCoder manages the imported data units, 3) define the coding granularity (e.g., sentence or paragraph), 4) invite a secondary coder, Bob, to the project, and 5) initiate the project.
 
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+<img src="assets/images/createproject.jpg" alt="Precoding" style="width: 100%; height: auto;"/>
 
 
-### Definition lists can be used with HTML syntax.
+<br>
+<br>
+<h2>Editing Interface for Phase 1</h2> 1) Inputting customized code for the text in "Raw Data", either 1a) choosing from the GPT’s recommendations, 1b) choosing from the top three relevant codes; 2) adding keywords support by 2a) selecting from raw data and "Add As Support"; 3) assigning a certainty level ranging from 1 to 5, where 1="very uncertain" and 5="very certain"; and 4) reviewing and modifying the individual codebook.
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
+<img src="assets/images/editing.jpg" alt="Precoding" style="width: 100%; height: auto;"/>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
 
-```
-The final element.
-```
+
+<br>
+<br>
+<h2>Comparison Interface for Phase 2</h2>
+Users can discuss and reach a consensus by following these steps: 1) reviewing another coder’s progress and 1a) clicking on the checkbox only if both individuals complete their coding, 2) two coders’ codes are listed in the same interface, 3) calculating the similarity between code pairs and 3a) IRR between coders, 4) sorting the similarity scores from highest to lowest and identifying (dis)agreements, and 4a) making a decision through discussion based on the initial codes, raw data, and code supports or utilizing the GPT’s three potential code decision suggestions. Additionally, users have the option to "Replace" the original codes proposed by two coders and revert back to the original codes if required. They can also replace or revert all code decisions with a single click on the top bar.
+
+<img src="assets/images/merge_discuss.jpg" alt="Merge and Discuss" style="width: 100%; height: auto;"/>
+
+<br>
+<br>
+<h2>Code Group Interface for Phase 3</h2> It enables users to manage their code decisions in a few steps: 1) the code decisions are automatically compiled into a list of unique codes that users can edit by double-clicking and accessing the original data by hovering over the code. 2) users can group their code decisions by using either "Add New Group" or "Create Code Groups By AI" options. They can then 2a) name or delete a code group or use AI-generated themes, and 2b) drag the code decisions into code groups. 3) Finally, users can save and update the code groups.
+
+<img src="assets/images/codegroup.jpg" alt="Development of a Codebook" style="width: 100%; height: auto;"/>

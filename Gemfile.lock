@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-theme-cayman (0.2.0)
+    jekyll-theme-tactile (0.2.0)
       jekyll (> 3.5, < 5.0)
       jekyll-seo-tag (~> 2.0)
 
@@ -36,12 +36,12 @@ GEM
     eventmachine (1.2.7)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.2)
-    google-protobuf (3.25.2-aarch64-linux)
-    google-protobuf (3.25.2-arm64-darwin)
-    google-protobuf (3.25.2-x86-linux)
-    google-protobuf (3.25.2-x86_64-darwin)
-    google-protobuf (3.25.2-x86_64-linux)
+    google-protobuf (3.25.3)
+    google-protobuf (3.25.3-aarch64-linux)
+    google-protobuf (3.25.3-arm64-darwin)
+    google-protobuf (3.25.3-x86-linux)
+    google-protobuf (3.25.3-x86_64-darwin)
+    google-protobuf (3.25.3-x86_64-linux)
     html-proofer (3.19.4)
       addressable (~> 2.3)
       mercenary (~> 0.3)
@@ -88,17 +88,17 @@ GEM
     mercenary (0.4.0)
     minitest (5.21.2)
     mutex_m (0.2.0)
-    nokogiri (1.16.0-aarch64-linux)
+    nokogiri (1.16.2-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.16.0-arm-linux)
+    nokogiri (1.16.2-arm-linux)
       racc (~> 1.4)
-    nokogiri (1.16.0-arm64-darwin)
+    nokogiri (1.16.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.0-x86-linux)
+    nokogiri (1.16.2-x86-linux)
       racc (~> 1.4)
-    nokogiri (1.16.0-x86_64-darwin)
+    nokogiri (1.16.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.0-x86_64-linux)
+    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     parallel (1.24.0)
     parser (3.3.0.5)
@@ -196,7 +196,7 @@ PLATFORMS
 
 DEPENDENCIES
   html-proofer (~> 3.0)
-  jekyll-theme-cayman!
+  jekyll-theme-tactile!
   rubocop-github (~> 0.16)
   w3c_validators (~> 1.3)
 
