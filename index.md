@@ -7,9 +7,6 @@ CollabCoder is a lower-barrier, rigorous workflow for inductive collaborative qu
 - **Iterative Discussion**, focusing on conflict mediation within the coding team, producing a list of agreed-upon code decisions; 
 - **Codebook Development**, where code groups may be formed through LLM-generated suggestions, based on the list of decided codes in the previous phase.
 
-<center>
-<iframe width="628" height="352" src="https://www.youtube.com/embed/fxZ0_BI0XCA?si=O9PTxNrAGxYagYVL" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
 
 <br>
 <br>
