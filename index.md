@@ -8,6 +8,12 @@ CollabCoder is a lower-barrier, rigorous workflow for inductive collaborative qu
 - **Codebook Development**, where code groups may be formed through LLM-generated suggestions, based on the list of decided codes in the previous phase.
 
 
+<center>
+<iframe width="628" height="352" src="https://www.youtube.com/embed/fxZ0_BI0XCA?si=O9PTxNrAGxYagYVL" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</center>
+
+
+
 <br>
 <br>
 <h2>Precoding</h2> Establish consistent data units and enlist coding team during project creation. The primary coder, Alice, can: 1) name the project, 2) incorporate data, ensuring it aligns with mutually agreed data units, 2a) illustrate how CollabCoder manages the imported data units, 3) define the coding granularity (e.g., sentence or paragraph), 4) invite a secondary coder, Bob, to the project, and 5) initiate the project.
