@@ -5,4 +5,5 @@ google_analytics:
 github:
     paper_url: https://arxiv.org/abs/2304.07366
     code_url: https://github.com/gaojie058/CollabCoder-Project
+    demo_url: http://16.16.202.78/
 theme: jekyll-theme-tactile
