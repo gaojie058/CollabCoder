@@ -165,6 +165,19 @@ a.button span {
 #view-on-github span {
   background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
 }
+#demo span{
+  background: transparent url(../images/demo.png) 12px 50% no-repeat;
+  
+}
+
+#demo{
+  margin-left: 20px;
+}
+
+#info span{
+  background: transparent url(../images/info.png) 12px 50% no-repeat;
+}
+
 #view-on-github {
   margin-right: 0;
 }
@@ -360,9 +373,6 @@ footer a:hover {
   }
   #downloads {
     margin-bottom: 25px;
-  }
-  #download-zip, #download-tar-gz {
-    display: none;
   }
   .inner {
     width: 94%;

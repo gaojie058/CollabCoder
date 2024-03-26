@@ -1,44 +1,18 @@
 <!DOCTYPE html>
-<html lang=" en-US">
+<html lang="{{ site.lang | default: " en-US" }}">
 
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/assets/css/style.css?v=">
-    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/print.css' | relative_url }}" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Version history | CollabCoder</title>
-<meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Version history" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="A GPT-powered Workflow for Collaborative Qualitative Analysis." />
-<meta property="og:description" content="A GPT-powered Workflow for Collaborative Qualitative Analysis." />
-<link rel="canonical" href="http://localhost:4000/another-page.html" />
-<meta property="og:url" content="http://localhost:4000/another-page.html" />
-<meta property="og:site_name" content="CollabCoder" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Version history" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A GPT-powered Workflow for Collaborative Qualitative Analysis.","headline":"Version history","url":"http://localhost:4000/another-page.html"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
+    {% seo %}
+    {% include head-custom.html %}
 </head>
 
 <body>
@@ -46,22 +20,28 @@
         <div class="inner">
 
             <header>
-                <h1>Version history</h1>
-                <h2>A GPT-powered Workflow for Collaborative Qualitative Analysis.</h2>
+                <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+                <h2>{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
             </header>
             <section id="downloads" class="clearfix">
-                
-                <a href="https://arxiv.org/abs/2304.07366" id="download-zip" class="button"><span>Paper</span></a>
-                <a href="https://github.com/gaojie058/CollabCoder-Project" id="view-on-github" class="button"><span>Code</span></a>
-                <a href="http://16.16.202.78" id="demo" class="button"><span>Demo</span></a>
-                <a href="/another-page" id="info" class="button"><span>About</span></a>
-                
-                
+                {% if site.show_downloads %}
+                <a href="{{ site.github.paper_url }}" id="download-zip" class="button"><span>Paper</span></a>
+                <a href="{{ site.github.code_url }}" id="view-on-github" class="button"><span>Code</span></a>
+                <a href="{{ site.github.demo_url }}" id="demo" class="button"><span>Demo</span></a>
+                <a href="{{site.baseurl}}/another-page" id="info" class="button"><span>About</span></a>
+                {% endif %}
+                {% if site.github.public %}
+                {% if site.github.is_project_page %}
+                <a href="{{ site.github.repository_url }}" id="view-on-github" class="button"><span>View on
+                        GitHub</span></a>
+                {% else %}
+                <a href="{{ site.github.owner_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
+                {% endif %}
+                {% endif %}
             </section>
             <hr>
             <section id="main_content">
-                <!-- 在这里添加你的关于页面具体内容 -->
-
+                {{ content }}
             </section>
 
             <section id="version">

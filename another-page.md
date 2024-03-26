@@ -1,9 +1,7 @@
 ---
-layout: default
+layout: about
+title: Version history
+# permalink: /about/
 ---
 
-## Welcome to another page
-
-_yay_
-
-[back](./)
+<!-- 在这里添加你的关于页面具体内容 -->

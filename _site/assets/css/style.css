@@ -263,6 +263,18 @@ a.button span {
   background: transparent url(../images/octocat-icon.png) 12px 50% no-repeat;
 }
 
+#demo span {
+  background: transparent url(../images/demo.png) 12px 50% no-repeat;
+}
+
+#demo {
+  margin-left: 20px;
+}
+
+#info span {
+  background: transparent url(../images/info.png) 12px 50% no-repeat;
+}
+
 #view-on-github {
   margin-right: 0;
 }
@@ -459,9 +471,6 @@ footer a:hover {
   #downloads {
     margin-bottom: 25px;
   }
-  #download-zip, #download-tar-gz {
-    display: none;
-  }
   .inner {
     width: 94%;
     margin: 0 auto;
@@ -476,5 +485,103 @@ footer a:hover {
 }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+#version a {
+  color: skyblue;
+}
+
+#version {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.version-item {
+  display: flex;
+  width: 50%;
+  margin: 20px 0;
+}
+
+.version-value {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 70px;
+  min-width: 50px;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgb(242, 242, 242);
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.version-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 1;
+  height: 30px;
+  max-width: 70px;
+  min-width: 50px;
+  margin-right: 20px;
+}
+.version-box div {
+  width: 15px;
+  height: 15px;
+  border-radius: 999px;
+  background-color: rgb(242, 242, 242);
+}
+
+.version-box::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: calc(var(--height) + 10px);
+  top: 30px;
+  background-color: rgb(232, 232, 232);
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+.update-message {
+  flex: 3;
+}
+
+.update-details {
+  font-size: 1.3rem;
+}
+
+.update-author {
+  color: #6d6d6d;
+}
+
+.version-value::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: calc(var(--height) + 10px);
+  top: 30px;
+  background-color: rgb(232, 232, 232);
+}
+
+#last-value:after {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .version-item {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
