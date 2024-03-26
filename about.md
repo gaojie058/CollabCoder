@@ -1,6 +1,6 @@
 ---
 layout: about
-title: Version history
+title: About
 # permalink: /about/
 ---
 
