@@ -107,3 +107,30 @@
         width: 100%;
     }
 }
+
+
+.FAQ-container{
+    margin-bottom: 20px;
+    // overflow: hidden;
+}
+
+.question-container{
+    border-top: 2px solid rgb(232,232,232);
+    padding: 10px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.unfold{
+    float: right;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.answer{
+    // display: none;
+    height: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s; /* 或 height 代替 max-height */
+}

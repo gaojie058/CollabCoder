@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/print.css' | relative_url }}" media="print">
+</head>
+
+<body>
+  <div id="container">
+    <div class="inner">
+
+      <header>
+        <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <h2>{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      </header>
+      <section id="downloads" class="clearfix">
+        {% if site.show_downloads %}
+        <a href="{{site.baseurl}}/index" id="home" class="button"><span>Home</span></a>
+        <a href="{{ site.github.paper_url }}" id="download-zip" class="button"><span>Paper</span></a>
+        <a href="{{ site.github.code_url }}" id="view-on-github" class="button"><span>Code</span></a>
+        <a href="{{ site.github.demo_url }}" id="demo" class="button"><span>Demo</span></a>
+        <a href="{{site.baseurl}}/about" id="info" class="button"><span>About</span></a>
+        
+        {% endif %}
+        {% if site.github.public %}
+        {% if site.github.is_project_page %}
+        <a href="{{ site.github.repository_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        {% else %}
+        <a href="{{ site.github.owner_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        {% endif %}
+        {% endif %}
+      </section>
+      <hr>
+      <section id="main_content">
+        {{ content }}
+      </section>
+
+      <section id="FAQ">
+      </section>
+
+      <footer>
+        If you have any questions, feel free to contact <a href="https://gaojie058.github.io/">Jie Gao</a> !
+      </footer>
+      <script src="./assets/data/FAQdata.js"></script>
+      <script>
+        const section = document.querySelector('#FAQ')
+        for (let i = 0; i < data.length; i++) {
+          const faq = document.createElement('div')
+          faq.className = 'FAQ-container'
+          const queContain = document.createElement('div')
+          queContain.className = 'question-container'
+          const que = document.createElement('span')
+          que.className = 'question'
+          que.innerHTML = data[i].question
+          const unfold = document.createElement('span')
+          unfold.className = 'unfold'
+          unfold.innerHTML = '↓'
+          const ans = document.createElement('div')
+          ans.className = 'answer'
+          ans.innerHTML = data[i].answer
+          queContain.appendChild(que)
+          queContain.appendChild(unfold)
+          faq.appendChild(queContain)
+          faq.appendChild(ans)
+          section.appendChild(faq)
+        }
+
+        const faqContainer = document.querySelectorAll('.FAQ-container')
+        const answer = document.querySelectorAll('.answer')
+        const unfold = document.querySelectorAll('.unfold')
+        let isUnfold = new Array(faqContainer.length).fill(false)
+
+        unfold.forEach((item, index) => {
+          item.addEventListener('click', function () {
+            if (isUnfold[index]) {
+              answer[index].style.height = '0px'
+              answer[index].style.maxHeight = '0px'
+              item.style.transform = 'rotate(0deg)'
+            } else {
+              answer[index].style.maxHeight = '200px'
+              answer[index].style.height = 'auto'
+              item.style.transform = 'rotate(180deg)'
+            }
+            isUnfold[index] = !isUnfold[index]
+
+          })
+        })
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+</head>
+
+<body>
+  <div id="container">
+    <div class="inner">
+
+      <header>
+        <h1>FAQ</h1>
+        <h2>Large Language Models for Qualitative Analysis.</h2>
+      </header>
+      <section id="downloads" class="clearfix">
+        
+        <a href="/index" id="home" class="button"><span>Home</span></a>
+        <a href="https://arxiv.org/abs/2304.07366" id="download-zip" class="button"><span>Paper</span></a>
+        <a href="https://github.com/gaojie058/CollabCoder_system" id="view-on-github" class="button"><span>Code</span></a>
+        <a href="http://16.16.202.78" id="demo" class="button"><span>Demo</span></a>
+        <a href="/about" id="info" class="button"><span>About</span></a>
+        
+        
+        
+      </section>
+      <hr>
+      <section id="main_content">
+        <!-- 在这里添加你的关于页面具体内容 -->
+
+      </section>
+
+      <section id="FAQ">
+      </section>
+
+      <footer>
+        If you have any questions, feel free to contact <a href="https://gaojie058.github.io/">Jie Gao</a> !
+      </footer>
+      <script src="./assets/data/FAQdata.js"></script>
+      <script>
+        const section = document.querySelector('#FAQ')
+        for (let i = 0; i < data.length; i++) {
+          const faq = document.createElement('div')
+          faq.className = 'FAQ-container'
+          const queContain = document.createElement('div')
+          queContain.className = 'question-container'
+          const que = document.createElement('span')
+          que.className = 'question'
+          que.innerHTML = data[i].question
+          const unfold = document.createElement('span')
+          unfold.className = 'unfold'
+          unfold.innerHTML = '↓'
+          const ans = document.createElement('div')
+          ans.className = 'answer'
+          ans.innerHTML = data[i].answer
+          queContain.appendChild(que)
+          queContain.appendChild(unfold)
+          faq.appendChild(queContain)
+          faq.appendChild(ans)
+          section.appendChild(faq)
+        }
+
+        const faqContainer = document.querySelectorAll('.FAQ-container')
+        const answer = document.querySelectorAll('.answer')
+        const unfold = document.querySelectorAll('.unfold')
+        let isUnfold = new Array(faqContainer.length).fill(false)
+
+        unfold.forEach((item, index) => {
+          item.addEventListener('click', function () {
+            if (isUnfold[index]) {
+              answer[index].style.height = '0px'
+              answer[index].style.maxHeight = '0px'
+              item.style.transform = 'rotate(0deg)'
+            } else {
+              answer[index].style.maxHeight = '200px'
+              answer[index].style.height = 'auto'
+              item.style.transform = 'rotate(180deg)'
+            }
+            isUnfold[index] = !isUnfold[index]
+
+          })
+        })
+      </script>
+</body>
+
+</html>
