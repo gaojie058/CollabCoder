@@ -1,5 +1,5 @@
 ---
-layout: qa-page
+layout: Q&A
 title: FAQ
 
 ---
