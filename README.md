@@ -203,13 +203,14 @@ npm run build
 
 
 ## 🙋‍♀️ Code Contributors
-| Period                | Contribution                | Contributors                                                |
-|-----------------------|-----------------------------|-------------------------------------------------------------|
-| 2024.03-Present       | System Refinement           | Jie Gao, Jinpeng Lin                                         |
-| 2022.10-2023.03       | Primary System Building     | Jie Gao, Yuchen Guo, Tianqin Zhang                          |
-| 2022.09-2023.02       | System Ideation             | Jie Gao, Simon Perrault, Yuchen Guo, Tianqin Zhang, Zheng Zhang |
+| Period                | Contribution                
+|-----------------------|-----------------------------|
+| 2024.03-2024.08       | System Refinement           |
+| 2022.10-2023.03       | Primary System Building     |
+| 2022.09-2023.02       | System Ideation             |
 
 
 ## 📧 Contact
 
 Please contact Jie Gao (https://gaojie058.github.io/) for any questions: [gaojie056@gmail.com](mailto:gaojie056@gmail.com).
+
