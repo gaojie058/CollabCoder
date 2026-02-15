@@ -1,57 +1,423 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/print.css' | relative_url }}" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title | default: "CollabCoder" }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --text: #1e293b;
+      --text-secondary: #64748b;
+      --border: #e2e8f0;
+      --accent: #7c3aed;
+    }
 
-{% seo %}
-    {% include head-custom.html %}
-  </head>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <body>
-    <div id="container">
-      <div class="inner">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--bg);
+    }
 
-        <header>
-          <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-          <h2>{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-        </header>
-        <section id="downloads" class="clearfix">
-          {% if site.show_downloads %}
-          <a href="{{ site.github.paper_url }}" id="download-zip" class="button"><span>Paper</span></a>
-          <a href="{{ site.github.code_url }}" id="view-on-github" class="button"><span>Code</span></a>
-          <a href="{{ site.github.demo_url }}" id="demo" class="button"><span>Demo</span></a>
-          <a href="{{site.baseurl}}/about" id="info" class="button"><span>About</span></a>
-          <a href="{{site.baseurl}}/Q&A" id="qa" class="button"><span>Q&A</span></a>
-          {% endif %}
-	{% if site.github.public %}
-	  {% if site.github.is_project_page %}
-          <a href="{{ site.github.repository_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
-	  {% else %}
-          <a href="{{ site.github.owner_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
-	  {% endif %}
-	{% endif %}
-        </section>
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+      border-bottom: 1px solid var(--border);
+    }
 
-        <section id="main_content">
-          {{ content }}
-        </section>
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
+    .hero .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
 
-        <footer>
-            If you encountered any questions in running the code, please consider <a href="https://github.com/gaojie058/CollabCoder_system/issues">reporting an issue on Github</a>. 
-        
-            If you have any questions regarding this research, feel free to contact <a href="https://gaojie058.github.io/">Jie Gao</a> !
-        </footer>
+    .hero .venue {
+      display: inline-block;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 6px 20px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
 
+    .hero .venue strong { color: var(--primary); }
 
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Authors */
+    .authors {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--bg);
+    }
+
+    .authors-list {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 8px;
+    }
+
+    .authors-list li a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05rem;
+    }
+
+    .authors-list li a:hover { text-decoration: underline; }
+
+    .affiliation {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 60px 0;
+    }
+
+    .section:nth-child(even) {
+      background: var(--bg-alt);
+    }
+
+    .section h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .section h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 2px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
+    /* Video */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      margin: 24px 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Features / Pipeline */
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 32px 0;
+    }
+
+    .pipeline-step {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .pipeline-step:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 16px rgba(37,99,235,0.1);
+      transform: translateY(-2px);
+    }
+
+    .pipeline-step .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .pipeline-step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .pipeline-step p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Images */
+    .figure {
+      margin: 32px 0;
+    }
+
+    .figure img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .figure figcaption {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    /* BibTeX */
+    .bibtex-box {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: 'Menlo', 'Consolas', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .bibtex-box .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #e2e8f0;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .bibtex-box .copy-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Content prose */
+    .content p {
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .content ul, .content ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+
+    .content li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .subtitle { font-size: 1.05rem; }
+      .pipeline { grid-template-columns: 1fr; }
+      .btn-group { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="venue">📄 Published at <strong>ACM CHI 2024</strong></div>
+    <h1>{{ site.title | default: "CollabCoder" }}</h1>
+    <p class="subtitle">{{ site.description | default: "Large Language Models for Collaborative Qualitative Analysis" }}</p>
+
+    <div class="btn-group">
+      <a href="{{ site.github.paper_url }}" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Paper
+      </a>
+      <a href="{{ site.github.code_url }}" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Code
+      </a>
+      <a href="{{ site.github.demo_url }}" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        Live Demo
+      </a>
+      <a href="{{ site.baseurl }}/Q&A" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Q&A
+      </a>
+    </div>
+  </div>
+
+  <!-- Authors -->
+  <div class="authors">
+    <ul class="authors-list">
+      <li><a href="https://gaojie058.github.io/">Jie Gao</a></li>
+      <li><a href="#">Yuchen Guo</a></li>
+      <li><a href="#">Gionnieve Lim</a></li>
+      <li><a href="#">Tianqin Zhang</a></li>
+      <li><a href="#">Zheng Zhang</a></li>
+      <li><a href="#">Toby Jia-Jun Li</a></li>
+      <li><a href="#">Simon Tangi Perrault</a></li>
+    </ul>
+    <p class="affiliation">Singapore University of Technology and Design · University of Notre Dame</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="section">
+    <div class="container content">
+      {{ content }}
+    </div>
+  </div>
+
+  <!-- Citation -->
+  <div class="section" style="background: var(--bg-alt);">
+    <div class="container">
+      <h2>Citation</h2>
+      <p>If you find CollabCoder useful for your research, please cite our paper:</p>
+      <div class="bibtex-box">
+        <button class="copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.textContent).then(()=>this.textContent='Copied!')">Copy</button>
+<pre>@inproceedings{gao2024collabcoder,
+  title={CollabCoder: A Lower-barrier, Rigorous Workflow for Inductive Collaborative Qualitative Analysis with Large Language Models},
+  author={Gao, Jie and Guo, Yuchen and Lim, Gionnieve and Zhang, Tianqin and Zhang, Zheng and Li, Toby Jia-Jun and Perrault, Simon Tangi},
+  booktitle={Proceedings of the CHI Conference on Human Factors in Computing Systems},
+  year={2024}
+}</pre>
       </div>
     </div>
-  </body>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Questions about the code? <a href="https://github.com/gaojie058/CollabCoder_system/issues">Report an issue on GitHub</a>
+      &nbsp;·&nbsp;
+      Questions about the research? Contact <a href="https://gaojie058.github.io/">Jie Gao</a>
+    </p>
+    <p style="margin-top: 8px; font-size: 0.8rem; color: #94a3b8;">
+      © 2024 CollabCoder Team
+    </p>
+  </footer>
+
+</body>
 </html>
